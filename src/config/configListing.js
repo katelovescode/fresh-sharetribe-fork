@@ -158,6 +158,25 @@ export const listingFields = [
       isRequired: false,
     },
   },
+  {
+    key: 'numerical',
+    scope: 'public',
+    schemaType: 'long',
+    showConfig: {
+      label: 'Number',
+    },
+    saveConfig: {
+      label: 'Number',
+      placeholderMessage: 'Choose a number',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      filterType: 'CapacityFilter',
+      label: 'Capacity',
+      group: 'primary',
+    },
+  },
 
   // // An example of how to use transaction type specific custom fields and private data.
   // {
@@ -222,47 +241,47 @@ export const listingFields = [
  *                    Default: 'multipleItems'.
  */
 
-export const listingTypes = [
-  {
-    listingType: 'daily-booking',
-    label: 'Daily booking',
-    transactionType: {
-      process: 'default-booking',
-      alias: 'default-booking/release-1',
-      unitType: 'day',
-    },
-  },
-  // // Here are some examples for other listingTypes
-  // // TODO: SearchPage does not work well if both booking and product selling are used at the same time
-  // {
-  //   listingType: 'nightly-booking',
-  //   label: 'Nightly booking',
-  //   transactionType: {
-  //     process: 'default-booking',
-  //     alias: 'default-booking/release-1',
-  //     unitType: 'night',
-  //   },
-  // },
-  // {
-  //   listingType: 'hourly-booking',
-  //   label: 'Hourly booking',
-  //   transactionType: {
-  //     process: 'default-booking',
-  //     alias: 'default-booking/release-1',
-  //     unitType: 'hour',
-  //   },
-  // },
-  // {
-  //   listingType: 'product-selling',
-  //   label: 'Sell bicycles',
-  //   transactionType: {
-  //     process: 'default-purchase',
-  //     alias: 'default-purchase/release-1',
-  //     unitType: 'item',
-  //   },
-  //   stockType: 'multipleItems',
-  // },
-];
+// export const listingTypes = [
+//   {
+//     listingType: 'daily-booking',
+//     label: 'Daily booking',
+//     transactionType: {
+//       process: 'default-booking',
+//       alias: 'default-booking/release-1',
+//       unitType: 'day',
+//     },
+//   },
+// // Here are some examples for other listingTypes
+// // TODO: SearchPage does not work well if both booking and product selling are used at the same time
+// {
+//   listingType: 'nightly-booking',
+//   label: 'Nightly booking',
+//   transactionType: {
+//     process: 'default-booking',
+//     alias: 'default-booking/release-1',
+//     unitType: 'night',
+//   },
+// },
+// {
+//   listingType: 'hourly-booking',
+//   label: 'Hourly booking',
+//   transactionType: {
+//     process: 'default-booking',
+//     alias: 'default-booking/release-1',
+//     unitType: 'hour',
+//   },
+// },
+// {
+//   listingType: 'product-selling',
+//   label: 'Sell bicycles',
+//   transactionType: {
+//     process: 'default-purchase',
+//     alias: 'default-purchase/release-1',
+//     unitType: 'item',
+//   },
+//   stockType: 'multipleItems',
+// },
+// ];
 
 // SearchPage can enforce listing query to only those listings with valid listingType
 // However, it only works if you have set 'enum' type search schema for the public data fields
